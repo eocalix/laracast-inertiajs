@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     //return view('welcome');
-    return inertia('Welcome');
+    //return inertia('Welcome');
+    //return Inertia::render('Welcome');
+    return Inertia::render('Home', [
+        'name' => 'Eocalix',
+        'frameworks' => [
+            'Laravel',
+            'Vue',
+            'Inertia'
+        ]
+    ]);
 });
