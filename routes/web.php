@@ -17,13 +17,29 @@ use Inertia\Inertia;
 Route::get('/', function () {
     //return view('welcome');
     //return inertia('Welcome');
-    //return Inertia::render('Welcome');
-    return Inertia::render('Home', [
-        'name' => 'Eocalix',
-        'frameworks' => [
-            'Laravel',
-            'Vue',
-            'Inertia'
-        ]
+    return Inertia::render('Home');
+    // return Inertia::render('Home', [
+    //     'name' => 'Eocalix',
+    //     'frameworks' => [
+    //         'Laravel',
+    //         'Vue',
+    //         'Inertia'
+    //     ]
+    // ]);
+});
+
+Route::get('/users', function () {
+    //sleep(2);
+    return Inertia::render("Users", [
+        'time' => now()->toTimeString()
     ]);
+});
+
+Route::get('/settings', function () {
+    return Inertia::render("Settings");
+});
+
+Route::post('/logout', function () {
+    //dd('Logging the user out');
+    dd(request('foo'));
 });
