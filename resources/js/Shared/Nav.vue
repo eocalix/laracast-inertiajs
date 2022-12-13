@@ -5,8 +5,8 @@
 
 <template>
     <!-- nav>ul>li*3>a[href=#] -->
-    <nav class="mt-6">
-        <ul class="list-disc">
+    <nav>
+        <ul class="flex list-disc space-x-4 list-inside">
             <li>
                 <NavLink href="/" v-bind:active="$page.component === 'Home'">Home</NavLink>
             </li>

@@ -1,6 +1,5 @@
 <script setup>
-    import Nav from '../Shared/Nav.vue';
-    import { Link } from '@inertiajs/inertia-vue3';
+    import Layout from '../Shared/Layout.vue';
 
     const props = defineProps({
         time: String,
@@ -8,11 +7,13 @@
 </script>
 
 <template>
-    <h1 class="text-4xl font-bold">Users</h1>
-    <Nav></Nav>
+    <Layout>
 
-    <div style="margin-top: 800px">
-        <p>The current time is {{ time }}.</p>
-        <Link href="/users" class="text-blue-500" preserve-scroll="true">Refresh</Link>
-    </div>
+        <h1 class="text-3xl">Users</h1>
+        
+        <div style="margin-top: 800px">
+            <p>The current time is {{ time }}.</p>
+            <Link href="/users" class="text-blue-500" preserve-scroll="true">Refresh</Link>
+        </div>
+    </Layout>
 </template>
